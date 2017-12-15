@@ -31,12 +31,13 @@ void afficheTab(int tab[12][12]){
     {
         for(j=1; j<11; j++)
         {
-            if(tab[i][j] == 0)
+            /*if(tab[i][j] == 0)
             {
                printf("-");
             } else {
             printf("%d", tab[i][j]);
-            } //printf("-");
+            } */
+            printf("-");
         }
         printf("\n");
     }
