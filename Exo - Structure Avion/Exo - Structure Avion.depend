@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1515762159 source:d:\documents\campus montsouris - bts sio slam\cours de dev\cours-de-c\exo - structure avion\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
