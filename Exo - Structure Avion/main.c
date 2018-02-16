@@ -47,7 +47,7 @@ int main()
     {
         if(strcmp(places[i].refAvion, ref)==0)
         {
-            nbPlaces -= 1;
+            nbPlaces--;
         }
     }
 

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1518787786 source:d:\documents\campus montsouris - bts sio slam\cours de dev\cours-de-c\carnet adresses\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
