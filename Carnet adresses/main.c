@@ -43,6 +43,7 @@ void afficher_contact(Carnet *carnet) // AFFICHE LA LISTE DES CONTACTS
 
 void ajouter_contact(Carnet *carnet) // PERMET D'AJOUTER UN CONTACT
 {
+    int valide = 1, numTelValide = 1, i;
 
     Contact *newContact = creer_contact();
 
@@ -59,10 +60,41 @@ void ajouter_contact(Carnet *carnet) // PERMET D'AJOUTER UN CONTACT
     printf("Entrez un numero de tel : ");
     scanf("%s", newContact->tel);
 
-    printf("Vous avez ajoute le contact suivant : %s %s %s %s", newContact->nom, newContact->prenom, newContact->mail, newContact->tel);
+    if(strchr(newContact->mail, '@') == NULL || strchr(newContact->mail, '.') == NULL)
+    {
+        printf("\nL'adresse email n'est pas valide !");
+        valide = 0;
+    }
 
-    newContact->next = carnet->start;
-    carnet->start = newContact;
+    if(strlen(newContact->tel) != 10)
+    {
+        printf("\nLe numero de tel doit comporter 10 numeros !");
+        valide = 0;
+    }
+
+    for(i = 0; newContact->tel[i] != '\0' ;i++)
+    {
+        if(newContact->tel[i] < 48 || newContact->tel[i] > 57)
+        {
+            valide = 0;
+            numTelValide = 0;
+        }
+    }
+
+    if(numTelValide == 0)
+    {
+        printf("\nLe numero de tel ne doit contenir que des chiffres de 0 a 9 !");
+    }
+
+
+    if(valide == 1)
+    {
+        newContact->next = carnet->start;
+        carnet->start = newContact;
+        printf("Vous avez ajoute le contact suivant : %s %s %s %s", newContact->nom, newContact->prenom, newContact->mail, newContact->tel);
+    }
+
+
 
 }
 
